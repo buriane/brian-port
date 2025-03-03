@@ -8,10 +8,10 @@ import CircularText from './CircularText/CircularText';
 import Particles from "./Particles/Particles";
 
 const textVariants = {
-    hidden: { opacity: 0, x: 100 }, // Mulai dari kanan (x: 100) dan tidak terlihat (opacity: 0)
+    hidden: { opacity: 0, x: 100 },
     visible: {
         opacity: 1,
-        x: 0, // Bergerak ke posisi normal (x: 0)
+        x: 0,
         transition: { duration: 1, ease: "easeOut" },
     },
 };
@@ -40,10 +40,10 @@ const waveVariants = {
 };
 
 const circularTextVariants = {
-    hidden: { opacity: 0, x: -100 }, // Mulai dari kiri (x: -100) dan tidak terlihat (opacity: 0)
+    hidden: { opacity: 0, x: -100 },
     visible: {
         opacity: 1,
-        x: 0, // Bergerak ke posisi normal (x: 0)
+        x: 0,
         transition: { duration: 1, ease: "easeOut" },
     },
 };
@@ -74,7 +74,7 @@ const Hero = () => {
                         variants={circularTextVariants}
                     >
                         <CircularText
-                            text="MASTER 🏆 BUILD 🚀 PRACTICE ⚡ "
+                            text="MASTER ⚡ BUILD ⚡ PRACTICE ⚡ "
                         />
                     </motion.div>
                 </div>

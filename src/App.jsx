@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import NavBar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -8,8 +9,23 @@ import Contacts from "./components/Contacts";
 import './index.css'
 import ClickSpark from "./components/ClickSpark/ClickSpark";
 import Aurora from "./components/Aurora/Aurora";
+import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <LoadingScreen />;
+  }
+
   return (
     <>
       <ClickSpark
