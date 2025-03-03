@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  background: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+.bg-image {
+  background-image: url("./assets/brian.webp");
+}
+
+#about {
+  scroll-margin-top: 80px;
+}
+
+.slide-up-down-animation {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  height: 1.2em; /* Sesuaikan tinggi dengan ukuran font */
+}
+
+.slide-up-down-animation span {
+  display: block;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-up-down-animation span.old-text {
+  transform: translateY(0);
+}
+
+.slide-up-down-animation span.new-text {
+  position: absolute;
+  top: 100%; /* Mulai dari bawah */
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(0);
+}
+
+/* Animasi saat hover */
+.slide-up-down-animation:hover span.old-text {
+  transform: translateY(-100%); /* Teks lama naik */
+  opacity: 0;
+}
+
+.slide-up-down-animation:hover span.new-text {
+  transform: translateY(-100%); /* Teks baru muncul dari bawah */
+  opacity: 1;
+}
+
+/* Animasi saat unhover */
+.slide-up-down-animation:not(:hover) span.old-text {
+  transform: translateY(0); /* Teks lama turun kembali */
+  opacity: 1;
+}
+
+.slide-up-down-animation:not(:hover) span.new-text {
+  transform: translateY(0); /* Teks baru turun dan menghilang */
+  opacity: 0;
+}
+
+.shiny-text {
+  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}
