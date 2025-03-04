@@ -50,7 +50,7 @@ const App = () => {
             colorStops={["#00F5D4", "#89CFF0", "#D8BFD8", "#FFC3A0", "#98FB98", "#FFFACD"]}
             blend={5}
             amplitude={1}
-            speed={0.5}
+            speed={1}
           />
         </div>
       </ClickSpark>

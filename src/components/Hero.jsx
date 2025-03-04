@@ -4,7 +4,6 @@ import { RiHand } from "react-icons/ri";
 import Lanyard from "./Lanyard/Lanyard";
 import RotatingText from "./RotatingText/RotatingText";
 import ShinyText from "./ShinyText/ShinyText";
-import CircularText from './CircularText/CircularText';
 import Particles from "./Particles/Particles";
 
 const textVariants = {
@@ -39,15 +38,6 @@ const waveVariants = {
     }
 };
 
-const circularTextVariants = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { duration: 1, ease: "easeOut" },
-    },
-};
-
 const Hero = () => {
     return (
         <section id="hero" className="relative min-h-screen overflow-hidden">
@@ -67,16 +57,7 @@ const Hero = () => {
             <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4">
                 <div className="w-full md:w-1/2 relative">
                     <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
-                    <motion.div
-                        className="absolute top-0 left-0 mt-44 ml-10 md:mt-52 md:ml-16"
-                        initial="hidden"
-                        animate="visible"
-                        variants={circularTextVariants}
-                    >
-                        <CircularText
-                            text="MASTER ⚡ BUILD ⚡ PRACTICE ⚡ "
-                        />
-                    </motion.div>
+
                 </div>
                 <motion.div
                     className="w-full md:w-1/2 p-8 mt-[-100px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
