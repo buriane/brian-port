@@ -72,6 +72,10 @@ const iconVariants = {
 const Contacts = () => {
     const [hoveredIcon, setHoveredIcon] = useState(null);
 
+    const openSocialLink = (url) => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section
             className="min-h-0 flex flex-col justify-center px-4 md:px-10 pb-10"
@@ -128,7 +132,7 @@ const Contacts = () => {
                     return (
                         <motion.div
                             key={link.platform}
-                            className="relative rounded-lg p-2 backdrop-blur-3xl bg-stone-500/10 border border-stone-500/20"
+                            className="relative rounded-lg p-2 backdrop-blur-3xl bg-stone-500/10 border border-stone-500/20 cursor-pointer"
                             initial="hidden"
                             whileInView="visible"
                             custom={1.0 + index * 0.2}
@@ -136,12 +140,12 @@ const Contacts = () => {
                             onMouseEnter={() => setHoveredIcon(link.platform)}
                             onMouseLeave={() => setHoveredIcon(null)}
                             whileHover="hover"
+                            onClick={() => openSocialLink(link.url)}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={link.ariaLabel}
                         >
-                            <motion.a
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label={link.ariaLabel}
+                            <motion.div
                                 className={`transition-opacity duration-300 ${
                                     hoveredIcon && hoveredIcon !== link.platform 
                                     ? 'opacity-50' 
@@ -149,7 +153,7 @@ const Contacts = () => {
                                 }`}
                             >
                                 <Icon size={30} />
-                            </motion.a>
+                            </motion.div>
                         </motion.div>
                     );
                 })}

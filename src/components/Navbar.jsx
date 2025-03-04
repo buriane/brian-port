@@ -8,8 +8,15 @@ const NavBar = () => {
     const [lastScrollY, setLastScrollY] = useState(0);
     const [activeSection, setActiveSection] = useState("hero");
 
-    const handleLinkClick = () => {
-        setMenuOpen(false);
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        if (menuOpen) {
+            setMenuOpen(false);
+        }
     };
 
     const scrollToHeroSection = () => {
@@ -65,21 +72,26 @@ const NavBar = () => {
         >
             <div className="flex justify-between items-center max-w-7xl mx-auto md:my-3 bg-stone-950/30 p-3 md:rounded-xl backdrop-blur-lg px-4 sm:px-6 lg:px-8">
                 <div className="text-white font-semibold text-lg uppercase">
-                    <a href="#" onClick={scrollToHeroSection}>BC</a>
+                    <div 
+                        onClick={scrollToHeroSection}
+                        className="cursor-pointer"
+                    >
+                        BC
+                    </div>
                 </div>
 
                 <div className="hidden md:flex space-x-8">
                     {LINKS.map((link, index) => (
-                        <a
-                            href={link.href}
+                        <div
                             key={index}
-                            className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation ${
+                            className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation cursor-pointer ${
                                 activeSection === link.href.replace("#", "") ? "text-white" : ""
                             }`}
+                            onClick={() => scrollToSection(link.href.replace("#", ""))}
                         >
                             <span className="old-text">{link.label}</span>
                             <span className="new-text">{link.label}</span>
-                        </a>
+                        </div>
                     ))}
                 </div>
 
@@ -101,17 +113,16 @@ const NavBar = () => {
             {menuOpen && (
                 <div className="md:hidden p-2 bg-stone-950/30 backdrop-blur-lg rounded-b-xl flex flex-col space-y-6 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     {LINKS.map((link, index) => (
-                        <a
-                            href={link.href}
+                        <div
                             key={index}
-                            className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation ${
+                            className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation cursor-pointer ${
                                 activeSection === link.href.replace("#", "") ? "text-white" : ""
                             }`}
-                            onClick={handleLinkClick}
+                            onClick={() => scrollToSection(link.href.replace("#", ""))}
                         >
                             <span className="old-text">{link.label}</span>
                             <span className="new-text">{link.label}</span>
-                        </a>
+                        </div>
                     ))}
                 </div>
             )}

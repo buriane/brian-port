@@ -35,10 +35,10 @@ const App = () => {
         sparkCount={8}
         duration={400}
       >
-        <NavBar />
+        <Hero />
         <main className="antialiased max-w-7xl mx-auto relative z-20">
           <NavBar />
-          <Hero />
+          <NavBar />
           <About />
           <Experiences />
           <Projects />

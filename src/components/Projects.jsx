@@ -44,6 +44,10 @@ const Projects = () => {
         })
     };
 
+    const openProjectLink = (url) => {
+        window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section className="px-6 py-20" id="projects">
             <motion.h1
@@ -113,20 +117,21 @@ const Projects = () => {
                                         ))}
                                     </div>
 
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className={`inline-block bg-white/90 text-stone-900 rounded-xl py-1.5 px-5 text-lg w-fit transition-all duration-300 hover:scale-110 ${
+                                    <div
+                                        onClick={() => openProjectLink(project.link)}
+                                        className={`inline-block bg-white/90 text-stone-900 rounded-xl py-1.5 px-5 text-lg w-fit transition-all duration-300 hover:scale-110 cursor-pointer ${
                                             hoveredButton && hoveredButton !== project.link 
                                             ? 'opacity-50' 
                                             : 'opacity-100'
                                         }`}
                                         onMouseEnter={() => setHoveredButton(project.link)}
                                         onMouseLeave={() => setHoveredButton(null)}
+                                        role="button"
+                                        tabIndex={0}
+                                        aria-label={`View ${project.name} on GitHub`}
                                     >
                                         View on GitHub
-                                    </a>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}

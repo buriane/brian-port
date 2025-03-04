@@ -61,8 +61,8 @@ const Hero = () => {
             <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4">
                 <div className="w-full md:w-1/2 relative">
                     <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
-
                 </div>
+                
                 <motion.div
                     className="w-full md:w-1/2 p-8 mt-[-100px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
                     initial="hidden"
