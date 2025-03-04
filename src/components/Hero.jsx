@@ -39,6 +39,10 @@ const waveVariants = {
 };
 
 const Hero = () => {
+    const openResume = () => {
+        window.open(HERO_CONTENT.resumeLink, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <section id="hero" className="relative min-h-screen overflow-hidden">
             <div className="absolute inset-0 -z-10">
@@ -113,11 +117,9 @@ const Hero = () => {
                     </motion.p>
 
                     <div className="w-full flex justify-start mt-4">
-                        <motion.a
-                            className="bg-stone-50 text-stone-900 px-6 py-3 text-lg font-medium inline-block rounded-xl w-auto"
-                            href={HERO_CONTENT.resumeLink}
-                            rel="noopener noreferrer"
-                            target="_blank"
+                        <motion.button
+                            className="bg-stone-50 text-stone-900 px-6 py-3 text-lg font-medium inline-block rounded-xl w-auto cursor-pointer"
+                            onClick={openResume}
                             variants={textVariants}
                             whileHover={{
                                 scale: 0.95,
@@ -130,7 +132,7 @@ const Hero = () => {
                             }}
                         >
                             {HERO_CONTENT.resumeLinkText}
-                        </motion.a>
+                        </motion.button>
                     </div>
                 </motion.div>
             </div>
