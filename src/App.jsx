@@ -10,6 +10,7 @@ import './index.css'
 import ClickSpark from "./components/ClickSpark/ClickSpark";
 import Aurora from "./components/Aurora/Aurora";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -54,6 +55,7 @@ const App = () => {
           />
         </div>
       </ClickSpark>
+      <Analytics />
     </>
   );
 };
