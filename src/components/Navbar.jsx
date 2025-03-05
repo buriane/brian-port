@@ -7,6 +7,7 @@ const NavBar = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [activeSection, setActiveSection] = useState("hero");
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
@@ -25,6 +26,14 @@ const NavBar = () => {
             heroSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 500);
+        
+        return () => clearTimeout(timer);
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -68,10 +77,16 @@ const NavBar = () => {
     return (
         <nav
             id="navbar"
-            className={`fixed top-0 left-0 w-full z-20 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+            className={`fixed top-0 left-0 w-full z-20 transition-all duration-500 ${
+                isVisible ? "translate-y-0" : "-translate-y-full"
+            } ${
+                isLoaded ? "opacity-100" : "opacity-0 -translate-y-6"
+            }`}
         >
             <div className="flex justify-between items-center max-w-7xl mx-auto md:my-3 bg-stone-950/30 p-3 md:rounded-xl backdrop-blur-lg px-4 sm:px-6 lg:px-8">
-                <div className="text-white font-semibold text-lg uppercase">
+                <div className={`text-white font-semibold text-lg uppercase transition-all duration-700 ${
+                    isLoaded ? "opacity-100" : "opacity-0 -translate-x-8"
+                }`}>
                     <div 
                         onClick={scrollToHeroSection}
                         className="cursor-pointer"
@@ -86,7 +101,10 @@ const NavBar = () => {
                             key={index}
                             className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation cursor-pointer ${
                                 activeSection === link.href.replace("#", "") ? "text-white" : ""
+                            } transition-all duration-700 ${
+                                isLoaded ? "opacity-100" : "opacity-0 translate-y-4"
                             }`}
+                            style={{ transitionDelay: `${100 + index * 100}ms` }}
                             onClick={() => scrollToSection(link.href.replace("#", ""))}
                         >
                             <span className="old-text">{link.label}</span>
@@ -95,7 +113,9 @@ const NavBar = () => {
                     ))}
                 </div>
 
-                <div className="md:hidden">
+                <div className={`md:hidden transition-all duration-700 ${
+                    isLoaded ? "opacity-100" : "opacity-0 translate-x-8"
+                }`}>
                     <button
                         onClick={() => setMenuOpen(!menuOpen)}
                         className="text-white focus:outline-none"
@@ -117,7 +137,8 @@ const NavBar = () => {
                             key={index}
                             className={`text-stone-400 hover:text-white transition duration-300 slide-up-down-animation cursor-pointer ${
                                 activeSection === link.href.replace("#", "") ? "text-white" : ""
-                            }`}
+                            } animate-fadeIn`}
+                            style={{ animationDelay: `${500 + index * 500}ms` }}
                             onClick={() => scrollToSection(link.href.replace("#", ""))}
                         >
                             <span className="old-text">{link.label}</span>
