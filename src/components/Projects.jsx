@@ -5,6 +5,7 @@ import ShinyText from './ShinyText/ShinyText';
 
 const Projects = () => {
     const [hoveredButton, setHoveredButton] = useState(null);
+    const [hoveredImage, setHoveredImage] = useState(null);
 
     const sharedAnimation = {
         duration: 0.8,
@@ -88,11 +89,17 @@ const Projects = () => {
                                 style={{ willChange: 'opacity, transform' }}
                             >
                                 <div className="relative z-10 flex flex-col gap-4">
-                                    <div className="relative aspect-[4/3] rounded-lg overflow-hidden max-h-[250px]">
+                                    <div 
+                                        className="relative aspect-[4/3] rounded-lg overflow-hidden max-h-[250px]"
+                                        onMouseEnter={() => setHoveredImage(index)}
+                                        onMouseLeave={() => setHoveredImage(null)}
+                                    >
                                         <img
                                             src={project.image}
                                             alt={project.name}
-                                            className="w-full h-full object-cover"
+                                            className={`w-full h-full object-cover transition-opacity duration-300 ${
+                                                hoveredImage !== null && hoveredImage !== index ? 'opacity-50' : 'opacity-100'
+                                            }`}
                                             loading="lazy"
                                         />
                                     </div>
