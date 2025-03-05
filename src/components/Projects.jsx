@@ -90,15 +90,25 @@ const Projects = () => {
                             >
                                 <div className="relative z-10 flex flex-col gap-4">
                                     <div 
-                                        className="relative aspect-[4/3] rounded-lg overflow-hidden max-h-[250px]"
+                                        className="relative aspect-[4/3] rounded-lg overflow-hidden max-h-[250px] cursor-pointer"
                                         onMouseEnter={() => setHoveredImage(index)}
                                         onMouseLeave={() => setHoveredImage(null)}
+                                        onClick={() => openProjectLink(project.link)}
+                                        role="button"
+                                        tabIndex={0}
+                                        aria-label={`Open ${project.name}`}
                                     >
                                         <img
                                             src={project.image}
                                             alt={project.name}
-                                            className={`w-full h-full object-cover transition-opacity duration-300 ${
-                                                hoveredImage !== null && hoveredImage !== index ? 'opacity-50' : 'opacity-100'
+                                            className={`w-full h-full object-cover transition-all duration-300 ${
+                                                hoveredImage !== null && hoveredImage !== index 
+                                                    ? 'opacity-50' 
+                                                    : 'opacity-100'
+                                            } ${
+                                                hoveredImage === index 
+                                                    ? 'scale-110' 
+                                                    : 'scale-100'
                                             }`}
                                             loading="lazy"
                                         />
