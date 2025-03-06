@@ -7,7 +7,6 @@ import Experiences from "./components/Experiences";
 import Certificates from "./components/Certificates";
 import Contacts from "./components/Contacts";
 import './index.css'
-import ClickSpark from "./components/ClickSpark/ClickSpark";
 import Aurora from "./components/Aurora/Aurora";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
 import { Analytics } from "@vercel/analytics/react"
@@ -30,16 +29,9 @@ const App = () => {
 
   return (
     <>
-      <ClickSpark
-        sparkColor='#fff'
-        sparkSize={10}
-        sparkRadius={15}
-        sparkCount={8}
-        duration={400}
-      >
+      <div className="relative min-h-screen">
         <Hero />
         <main className="antialiased max-w-7xl mx-auto relative z-20">
-          <NavBar />
           <NavBar />
           <About />
           <Experiences />
@@ -55,7 +47,7 @@ const App = () => {
             speed={1}
           />
         </div>
-      </ClickSpark>
+      </div>
       <Analytics />
       <SpeedInsights />
     </>
