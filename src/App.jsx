@@ -6,6 +6,7 @@ import About from "./components/About";
 import Experiences from "./components/Experiences";
 import Certificates from "./components/Certificates";
 import Contacts from "./components/Contacts";
+import ScrollToTop from "./components/ScrollToTop";
 import './index.css'
 import Aurora from "./components/Aurora/Aurora";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
@@ -48,6 +49,7 @@ const App = () => {
           />
         </div>
       </div>
+      <ScrollToTop />
       <Analytics />
       <SpeedInsights />
     </>
