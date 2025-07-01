@@ -28,6 +28,7 @@ import connected from "../assets/connected.webp";
 import sentweet from "../assets/sentweet.webp";
 import pedulihati from "../assets/pedulihati.webp";
 import chrometry from "../assets/chrometry.webp";
+import spotifyCluster from "../assets/spotifycluster.webp";
 
 import sertif1 from "../assets/sertif1.webp";
 import sertif2 from "../assets/sertif2.webp";
@@ -148,6 +149,13 @@ export const PROJECTS = [
     image: chrometry,
     tech: ["Streamlit", "Python", "OpenCV", "NumPy", "Matplotlib"],
     link: "https://github.com/buriane/chrometry",
+  },
+  {
+    name: "SpotifyCluster",
+    description: "SpotifyCluster is a web-based Spotify user behavior analysis application that uses PCA and K-Means for clustering and Apriori to find association patterns.",
+    image: spotifyCluster,
+    tech: ["Streamlit", "Python", "Scikit-learn", "MLxtend", "Pandas", "Matplotlib"],
+    link: "https://github.com/buriane/spotify-clustering",
   },
   {
     name: "Temulik",
