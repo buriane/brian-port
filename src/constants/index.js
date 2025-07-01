@@ -26,6 +26,8 @@ import soeara from "../assets/soeara.webp";
 import jjk from "../assets/jjk.webp";
 import connected from "../assets/connected.webp";
 import sentweet from "../assets/sentweet.webp";
+import pedulihati from "../assets/pedulihati.webp";
+import chrometry from "../assets/chrometry.webp";
 
 import sertif1 from "../assets/sertif1.webp";
 import sertif2 from "../assets/sertif2.webp";
@@ -134,11 +136,25 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    name: "PeduliHati",
+    description: "PeduliHati is a web-based expert system platform that provides preliminary analysis of liver disease based on symptoms entered by users, relying on machine learning algorithms for classification.",
+    image: pedulihati,
+    tech: ["Django", "MySQL", "Tailwind CSS", "Python", "HTML/CSS", "JavaScript", "Figma"],
+    link: "https://github.com/buriane/naive-bayes",
+  },
+  {
+    name: "Chrometry",
+    description: "Chrometry is a web-based application for visual analysis of product photos, capable of detecting geometric shapes and performing dominant color segmentation using digital image processing techniques.",
+    image: chrometry,
+    tech: ["Streamlit", "Python", "OpenCV", "NumPy", "Matplotlib"],
+    link: "https://github.com/buriane/chrometry",
+  },
+  {
     name: "Temulik",
     description: "Temulik is an innovative application based on geolocation and gamification to optimize the search for lost items in the campus environment.",
     image: temulik,
     tech: ["Firebase", "Flutter", "Figma"],
-    link: "https://github.com/send0moka/temulik",
+    link: "https://github.com/buriane/temulik",
   },
   {
     name: "Soeara",
@@ -159,7 +175,7 @@ export const PROJECTS = [
     description: "Connected is a simple project management website for fictitious companies.",
     tech: ["MySQL", "Laravel 10", "Bootstrap", "JavaScript", "HTML/CSS"],
     image: connected,
-    link: "https://github.com/dzakwanIrfan/connected",
+    link: "https://github.com/buriane/connected",
   },
   {
     name: "Sentweet",
