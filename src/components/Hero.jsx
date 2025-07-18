@@ -98,7 +98,7 @@ const Hero = () => {
                             <RiHand className="text-2xl md:text-3xl lg:text-4xl" />
                         </motion.div>
 
-                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium">
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl text-white/60 font-medium">
                             {HERO_CONTENT.greeting}
                         </h1>
                     </motion.div>

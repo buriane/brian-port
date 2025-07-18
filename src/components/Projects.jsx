@@ -117,7 +117,7 @@ const Projects = () => {
                                         <h2 className="text-2xl font-medium">
                                             {project.name}
                                         </h2>
-                                        <p className="text-sm text-gray-300 line-clamp-3 text-justify">
+                                        <p className="text-sm text-white/60 line-clamp-3 text-justify">
                                             {project.description}
                                         </p>
                                     </div>

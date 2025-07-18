@@ -86,7 +86,7 @@ const Experiences = () => {
                             {/* dot timeline */}
                             <div className="absolute left-4 top-6 w-4 h-4 bg-white rounded-full z-10 md:left-4" />
 
-                            <div className="text-lg md:w-1/4 mb-2 md:mb-0 p-4 pl-12 md:pl-12">
+                            <div className="text-lg text-white/60 md:w-1/4 mb-2 md:mb-0 p-4 pl-12 md:pl-12">
                                 {experience.yearRange}
                             </div>
 

@@ -114,7 +114,7 @@ const Certificates = () => {
                                         </div>
                                         <div className='space-y-1'>
                                             <h2 className='text-base lg:text-lg font-semibold text-white'>{certificate.name}</h2>
-                                            <p className='text-xs lg:text-sm font-light italic text-gray-300'>
+                                            <p className='text-xs lg:text-sm font-light italic text-white/60'>
                                                 {certificate.issuer}
                                             </p>
                                         </div>

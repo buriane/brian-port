@@ -99,7 +99,7 @@ const Contacts = () => {
             </motion.div>
 
             <motion.h3
-                className="text-2xl md:text-5xl leading-none"
+                className="text-2xl md:text-5xl leading-none text-white/60"
                 initial="hidden"
                 whileInView="visible"
                 custom={0.4}
