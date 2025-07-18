@@ -71,6 +71,9 @@ const Hero = () => {
                                 src={HERO_CONTENT.cocard}
                                 alt="Profile"
                                 className="w-auto h-auto max-w-full max-h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                                fetchPriority="high"
                             />
                         </motion.div>
                     </motion.div>

@@ -112,6 +112,9 @@ const Experiences = () => {
                                                 <img
                                                     src={experience.image}
                                                     alt={experience.title}
+                                                    loading="lazy"
+                                                    decoding="async"
+                                                    fetchPriority="high"
                                                     className="w-full h-full object-cover rounded-lg"
                                                 />
                                             </div>

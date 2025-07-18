@@ -134,6 +134,8 @@ const About = () => {
                   alt="Indonesia"
                   className="w-12 h-12 mr-4"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="high"
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.from[0]}</h2>
@@ -168,6 +170,8 @@ const About = () => {
                   alt="Jenderal Soedirman University"
                   className="w-12 h-12 mr-4"
                   loading="lazy"
+                  decoding="async"
+                  fetchPriority="high"
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.college[0]}</h2>
@@ -225,6 +229,8 @@ const About = () => {
                     alt={skill.name}
                     className="w-12 mr-4"
                     loading="lazy"
+                    decoding="async"
+                    fetchPriority="high"
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{skill.name}</h2>

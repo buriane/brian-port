@@ -102,12 +102,14 @@ const Certificates = () => {
                                             <img
                                                 src={certificate.image}
                                                 alt={certificate.name}
+                                                loading="lazy"
+                                                decoding="async"
+                                                fetchPriority="high"
                                                 onClick={() => openModal(certificate)}
                                                 className={`w-full h-full object-cover rounded-md transition-all duration-300 ${hoveredCertificate && hoveredCertificate !== certificate
-                                                        ? 'opacity-50'
-                                                        : 'opacity-100 group-hover:scale-110'
+                                                    ? 'opacity-50'
+                                                    : 'opacity-100 group-hover:scale-110'
                                                     }`}
-                                                loading='lazy'
                                             />
                                         </div>
                                         <div className='space-y-1'>
@@ -157,7 +159,7 @@ const Certificates = () => {
                         </button>
                         <h2 className='text-xl font-semibold mb-4 text-white'>{selectedCertificate.name}</h2>
                         <div className='rounded-lg overflow-hidden'>
-                            <img src={selectedCertificate.image} alt={selectedCertificate.name} className='w-full h-auto rounded-md' />
+                            <img src={selectedCertificate.image} alt={selectedCertificate.name} className='w-full h-auto rounded-md' loading="lazy" decoding="async" fetchPriority="high" />
                         </div>
                     </div>
                 </div>

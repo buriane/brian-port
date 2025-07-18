@@ -100,14 +100,16 @@ const Projects = () => {
                                         <img
                                             src={project.image}
                                             alt={project.name}
+                                            loading="lazy"
+                                            decoding="async"
+                                            fetchPriority="high"
                                             className={`w-full h-full object-cover transition-all duration-300 ${hoveredImage !== null && hoveredImage !== index
-                                                    ? 'opacity-50'
-                                                    : 'opacity-100'
+                                                ? 'opacity-50'
+                                                : 'opacity-100'
                                                 } ${hoveredImage === index
                                                     ? 'scale-110'
                                                     : 'scale-100'
                                                 }`}
-                                            loading="lazy"
                                         />
                                     </div>
 
@@ -134,8 +136,8 @@ const Projects = () => {
                                     <div
                                         onClick={() => openProjectLink(project.link)}
                                         className={`inline-block bg-white/90 text-stone-900 rounded-xl py-1.5 px-5 text-lg w-fit transition-all duration-300 hover:scale-110 cursor-pointer ${hoveredButton && hoveredButton !== project.link
-                                                ? 'opacity-50'
-                                                : 'opacity-100'
+                                            ? 'opacity-50'
+                                            : 'opacity-100'
                                             }`}
                                         onMouseEnter={() => setHoveredButton(project.link)}
                                         onMouseLeave={() => setHoveredButton(null)}
