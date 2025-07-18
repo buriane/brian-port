@@ -1,3 +1,5 @@
+import cocard from "../assets/cocard.webp";
+
 import bootstrap from "../assets/bootstrap.webp";
 import figma from "../assets/figma.webp";
 import firebase from "../assets/firebase.webp";
@@ -48,6 +50,7 @@ export const LINKS = [
 ];
 
 export const HERO_CONTENT = {
+  cocard: cocard,
   greeting: "Hey! It's me",
   name: "Brian Cahya,",
   description:

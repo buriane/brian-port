@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { PROJECTS } from '../constants';
-import ShinyText from './ShinyText/ShinyText';
 
 const Projects = () => {
     const [hoveredButton, setHoveredButton] = useState(null);
@@ -89,7 +88,7 @@ const Projects = () => {
                                 style={{ willChange: 'opacity, transform' }}
                             >
                                 <div className="relative z-10 flex flex-col gap-4">
-                                    <div 
+                                    <div
                                         className="relative aspect-[4/3] rounded-lg overflow-hidden max-h-[250px] cursor-pointer"
                                         onMouseEnter={() => setHoveredImage(index)}
                                         onMouseLeave={() => setHoveredImage(null)}
@@ -101,15 +100,13 @@ const Projects = () => {
                                         <img
                                             src={project.image}
                                             alt={project.name}
-                                            className={`w-full h-full object-cover transition-all duration-300 ${
-                                                hoveredImage !== null && hoveredImage !== index 
-                                                    ? 'opacity-50' 
+                                            className={`w-full h-full object-cover transition-all duration-300 ${hoveredImage !== null && hoveredImage !== index
+                                                    ? 'opacity-50'
                                                     : 'opacity-100'
-                                            } ${
-                                                hoveredImage === index 
-                                                    ? 'scale-110' 
+                                                } ${hoveredImage === index
+                                                    ? 'scale-110'
                                                     : 'scale-100'
-                                            }`}
+                                                }`}
                                             loading="lazy"
                                         />
                                     </div>
@@ -119,7 +116,7 @@ const Projects = () => {
                                             {project.name}
                                         </h2>
                                         <p className="text-sm text-gray-300 line-clamp-3 text-justify">
-                                            <ShinyText text={project.description} disabled={false} speed={3} className='shiny-text' />
+                                            {project.description}
                                         </p>
                                     </div>
 
@@ -136,11 +133,10 @@ const Projects = () => {
 
                                     <div
                                         onClick={() => openProjectLink(project.link)}
-                                        className={`inline-block bg-white/90 text-stone-900 rounded-xl py-1.5 px-5 text-lg w-fit transition-all duration-300 hover:scale-110 cursor-pointer ${
-                                            hoveredButton && hoveredButton !== project.link 
-                                            ? 'opacity-50' 
-                                            : 'opacity-100'
-                                        }`}
+                                        className={`inline-block bg-white/90 text-stone-900 rounded-xl py-1.5 px-5 text-lg w-fit transition-all duration-300 hover:scale-110 cursor-pointer ${hoveredButton && hoveredButton !== project.link
+                                                ? 'opacity-50'
+                                                : 'opacity-100'
+                                            }`}
                                         onMouseEnter={() => setHoveredButton(project.link)}
                                         onMouseLeave={() => setHoveredButton(null)}
                                         role="button"

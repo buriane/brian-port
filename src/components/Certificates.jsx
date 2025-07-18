@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CERTIFICATES } from '../constants';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import ShinyText from './ShinyText/ShinyText';
 
 const Certificates = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -63,7 +62,7 @@ const Certificates = () => {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
-    
+
     return (
         <section className='px-6 py-20 min-h-screen mb-6' id='certificates'>
             <motion.h1
@@ -104,18 +103,17 @@ const Certificates = () => {
                                                 src={certificate.image}
                                                 alt={certificate.name}
                                                 onClick={() => openModal(certificate)}
-                                                className={`w-full h-full object-cover rounded-md transition-all duration-300 ${
-                                                    hoveredCertificate && hoveredCertificate !== certificate 
-                                                    ? 'opacity-50' 
-                                                    : 'opacity-100 group-hover:scale-110'
-                                                }`}
+                                                className={`w-full h-full object-cover rounded-md transition-all duration-300 ${hoveredCertificate && hoveredCertificate !== certificate
+                                                        ? 'opacity-50'
+                                                        : 'opacity-100 group-hover:scale-110'
+                                                    }`}
                                                 loading='lazy'
                                             />
                                         </div>
                                         <div className='space-y-1'>
                                             <h2 className='text-base lg:text-lg font-semibold text-white'>{certificate.name}</h2>
                                             <p className='text-xs lg:text-sm font-light italic text-gray-300'>
-                                                <ShinyText text={certificate.issuer} disabled={false} speed={3} className='shiny-text' />
+                                                {certificate.issuer}
                                             </p>
                                         </div>
                                         <p className='text-sm text-gray-300'>{certificate.year}</p>
@@ -127,7 +125,7 @@ const Certificates = () => {
                 </div>
             </div>
 
-            <motion.div 
+            <motion.div
                 className='flex justify-between items-center mt-6'
                 initial="hidden"
                 whileInView="visible"

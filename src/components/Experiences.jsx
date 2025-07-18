@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { EXPERIENCES } from "../constants";
-import ShinyText from "./ShinyText/ShinyText";
 
 const Experiences = () => {
     const [hoveredExperience, setHoveredExperience] = useState(null);
@@ -37,11 +36,11 @@ const Experiences = () => {
     };
 
     const experienceHoverVariants = {
-        hover: { transition: { duration: 0.3, ease: "easeOut" } }, 
+        hover: { transition: { duration: 0.3, ease: "easeOut" } },
     };
 
     const imageHoverVariants = {
-        hover: { transition: { duration: 0.3, ease: "easeOut" } }, 
+        hover: { transition: { duration: 0.3, ease: "easeOut" } },
     };
 
     return (
@@ -80,15 +79,15 @@ const Experiences = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.2 }}
                         variants={containerVariants}
-                        onMouseEnter={() => setHoveredExperience(index)} 
-                        onMouseLeave={() => setHoveredExperience(null)} 
+                        onMouseEnter={() => setHoveredExperience(index)}
+                        onMouseLeave={() => setHoveredExperience(null)}
                     >
                         <div className="flex flex-col md:flex-row md:justify-between items-start relative">
                             {/* dot timeline */}
                             <div className="absolute left-4 top-6 w-4 h-4 bg-white rounded-full z-10 md:left-4" />
 
                             <div className="text-lg md:w-1/4 mb-2 md:mb-0 p-4 pl-12 md:pl-12">
-                                <ShinyText text={experience.yearRange} disabled={false} speed={3} className='shiny-text' />
+                                {experience.yearRange}
                             </div>
 
                             <motion.div
@@ -98,11 +97,10 @@ const Experiences = () => {
                             >
                                 <motion.div
                                     className={`max-w-3xl backdrop-blur-3xl p-4 bg-stone-600/10 border border-stone-500/20 rounded-lg
-                                                group relative transition-opacity duration-300 ${
-                                                    hoveredExperience !== null && hoveredExperience !== index 
-                                                    ? 'opacity-50' 
-                                                    : 'opacity-100'
-                                                }`}
+                                                group relative transition-opacity duration-300 ${hoveredExperience !== null && hoveredExperience !== index
+                                            ? 'opacity-50'
+                                            : 'opacity-100'
+                                        }`}
                                 >
                                     <div className="relative z-10 flex flex-row items-start space-x-4">
                                         <motion.div

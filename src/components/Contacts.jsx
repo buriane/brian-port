@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { CONTACT_CONTENT } from "../constants";
 import { RiInstagramFill, RiGithubFill, RiLinkedinFill, RiWhatsappFill, RiMailFill } from "react-icons/ri";
-import ShinyText from "./ShinyText/ShinyText";
 
 const sharedAnimation = {
     duration: 0.8,
@@ -106,7 +105,7 @@ const Contacts = () => {
                 custom={0.4}
                 variants={textVariants}
             >
-                <ShinyText text={CONTACT_CONTENT.headline} disabled={false} speed={3} className='shiny-text' />
+                {CONTACT_CONTENT.headline}
             </motion.h3>
 
             <motion.p
@@ -146,11 +145,10 @@ const Contacts = () => {
                             aria-label={link.ariaLabel}
                         >
                             <motion.div
-                                className={`transition-opacity duration-300 ${
-                                    hoveredIcon && hoveredIcon !== link.platform 
-                                    ? 'opacity-50' 
-                                    : 'opacity-100'
-                                }`}
+                                className={`transition-opacity duration-300 ${hoveredIcon && hoveredIcon !== link.platform
+                                        ? 'opacity-50'
+                                        : 'opacity-100'
+                                    }`}
                             >
                                 <Icon size={30} />
                             </motion.div>

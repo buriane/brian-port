@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import { HERO_CONTENT } from "../constants";
 import { RiHand } from "react-icons/ri";
-import Lanyard from "./Lanyard/Lanyard";
 import RotatingText from "./RotatingText/RotatingText";
-import ShinyText from "./ShinyText/ShinyText";
-import Particles from "./Particles/Particles";
 
 const textVariants = {
     hidden: { opacity: 0, x: 100 },
@@ -38,6 +35,18 @@ const waveVariants = {
     }
 };
 
+const floatingVariants = {
+    float: {
+        y: [0, -10, 0],
+        transition: {
+            duration: 3,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+        }
+    }
+};
+
 const Hero = () => {
     const openResume = () => {
         window.open(HERO_CONTENT.resumeLink, '_blank', 'noopener,noreferrer');
@@ -45,26 +54,30 @@ const Hero = () => {
 
     return (
         <section id="hero" className="relative min-h-screen overflow-hidden">
-            <div className="absolute inset-0 -z-10">
-                <Particles
-                    particleColors={['#ffffff', '#ffffff']}
-                    particleCount={500}
-                    particleSpread={5}
-                    speed={0.3}
-                    particleBaseSize={50}
-                    moveParticlesOnHover={false}
-                    alphaParticles={true}
-                    disableRotation={true}
-                />
-            </div>
-
-            <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4">
-                <div className="w-full md:w-1/2 relative">
-                    <Lanyard position={[0, 0, 15]} gravity={[0, -40, 0]} />
+            <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4 mt-16 lg:mt-0 px-4 sm:px-6 md:px-8">
+                <div className="w-full md:w-1/2 relative py-6 md:py-0">
+                    <motion.div
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="flex justify-center items-center w-full h-full"
+                    >
+                        <motion.div
+                            className="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden flex justify-center items-center"
+                            animate="float"
+                            variants={floatingVariants}
+                        >
+                            <img
+                                src={HERO_CONTENT.cocard}
+                                alt="Profile"
+                                className="w-auto h-auto max-w-full max-h-full object-cover"
+                            />
+                        </motion.div>
+                    </motion.div>
                 </div>
-                
+
                 <motion.div
-                    className="w-full md:w-1/2 p-8 mt-[-100px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
+                    className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 mt-[-20px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
                     initial="hidden"
                     animate="visible"
                     variants={containerVariants}
@@ -83,7 +96,7 @@ const Hero = () => {
                         </motion.div>
 
                         <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium">
-                            <ShinyText text={HERO_CONTENT.greeting} disabled={false} speed={3} className='shiny-text' />
+                            {HERO_CONTENT.greeting}
                         </h1>
                     </motion.div>
 
@@ -116,9 +129,9 @@ const Hero = () => {
                         {HERO_CONTENT.description}
                     </motion.p>
 
-                    <div className="w-full flex justify-start mt-4">
+                    <div className="w-full flex justify-start mb-8 lg:mt-4">
                         <motion.button
-                            className="bg-stone-50 text-stone-900 px-6 py-3 text-lg font-medium inline-block rounded-xl w-auto cursor-pointer"
+                            className="bg-stone-50 text-stone-900 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 text-base sm:text-md md:text-lg font-medium inline-block rounded-lg sm:rounded-xl w-auto cursor-pointer shadow-md"
                             onClick={openResume}
                             variants={textVariants}
                             whileHover={{
