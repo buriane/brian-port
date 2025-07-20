@@ -25,10 +25,10 @@ const HeroOrbs = ({ isVisible = true }) => {
             <Orb
                 color="#89CFF0"
                 size={350}
-                blur={70}
-                opacity={0.4}
-                duration={8}
-                className="absolute -top-[15%] -right-[5%] md:right-[25%]"
+                blur={80}
+                opacity={0.3}
+                duration={9}
+                className="absolute -top-[15%] -right-[5%] md:right-[25%] hidden lg:block"
                 x={30}
                 y={-20}
             />
@@ -37,9 +37,9 @@ const HeroOrbs = ({ isVisible = true }) => {
             <Orb
                 color="#00F5D4"
                 size={320}
-                blur={65}
+                blur={70}
                 opacity={0.35}
-                duration={7}
+                duration={8}
                 delay={0.5}
                 className="absolute top-[30%] -left-[10%] md:left-[5%] hidden md:block"
                 x={-20}
@@ -50,11 +50,11 @@ const HeroOrbs = ({ isVisible = true }) => {
             <Orb
                 color="#FFC3A0"
                 size={280}
-                blur={80}
-                opacity={0.3}
-                duration={9}
+                blur={65}
+                opacity={0.4}
+                duration={7}
                 delay={1}
-                className="absolute bottom-[25%] left-[90%] transform -translate-x-1/2 hidden lg:block"
+                className="absolute top-[10%] md:top-auto md:bottom-[25%] left-[90%]"
                 x={20}
                 y={-30}
             />
