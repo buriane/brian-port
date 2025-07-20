@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { HERO_CONTENT } from "../constants";
 import { RiHand } from "react-icons/ri";
 import RotatingText from "./RotatingText/RotatingText";
+import HeroOrbs from "./Orb/HeroOrbs";
 
 const textVariants = {
     hidden: { opacity: 0, x: 100 },
@@ -61,7 +62,7 @@ const Hero = () => {
     const heroRef = useRef(null);
     const imageRef = useRef(null);
     const textRef = useRef(null);
-    
+
     const isImageInView = useInView(imageRef, { amount: 0.3 });
     const isTextInView = useInView(textRef, { amount: 0.3 });
 
@@ -71,6 +72,10 @@ const Hero = () => {
 
     return (
         <section id="hero" className="relative min-h-screen overflow-hidden" ref={heroRef}>
+            {/* 3 distinct colorful animated orbs in background */}
+            <HeroOrbs isVisible={isImageInView || isTextInView} />
+
+            {/* Content wrapper with glass effect */}
             <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4 mt-16 lg:mt-0 px-4 sm:px-6 md:px-8">
                 <div className="w-full md:w-1/2 relative py-6 md:py-0" ref={imageRef}>
                     <motion.div

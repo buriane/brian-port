@@ -50,12 +50,13 @@ const About = () => {
   };
 
   const skillVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
+      scale: 1,
       transition: {
-        duration: 0.8,
-        ease: "easeOut",
+        opacity: { duration: 0.6, ease: "easeOut" },
+        scale: { duration: 0.7, ease: "easeOut", type: "spring", stiffness: 100 },
       },
     },
   };
