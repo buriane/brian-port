@@ -21,7 +21,7 @@ const HeroOrbs = ({ isVisible = true }) => {
             animate={isVisible ? "visible" : "hidden"}
             variants={containerVariants}
         >
-            {/* Main teal orb - top right */}
+            {/* 1 orb - top right (visible on all screens) */}
             <Orb
                 color="#89CFF0"
                 size={350}
@@ -33,7 +33,7 @@ const HeroOrbs = ({ isVisible = true }) => {
                 y={-20}
             />
 
-            {/* Mid purple orb - mid left */}
+            {/* 2 orb - mid left (visible on tablet and desktop) */}
             <Orb
                 color="#00F5D4"
                 size={320}
@@ -41,12 +41,12 @@ const HeroOrbs = ({ isVisible = true }) => {
                 opacity={0.35}
                 duration={7}
                 delay={0.5}
-                className="absolute top-[30%] -left-[10%] md:left-[5%]"
+                className="absolute top-[30%] -left-[10%] md:left-[5%] hidden md:block"
                 x={-20}
                 y={40}
             />
 
-            {/* Orange orb - bottom */}
+            {/* 3 - bottom (visible only on desktop) */}
             <Orb
                 color="#FFC3A0"
                 size={280}
@@ -54,7 +54,7 @@ const HeroOrbs = ({ isVisible = true }) => {
                 opacity={0.3}
                 duration={9}
                 delay={1}
-                className="absolute bottom-[25%] left-[90%] transform -translate-x-1/2"
+                className="absolute bottom-[25%] left-[90%] transform -translate-x-1/2 hidden lg:block"
                 x={20}
                 y={-30}
             />
