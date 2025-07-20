@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronUpIcon } from '@heroicons/react/24/outline';
+import { ChevronUpIcon } from 'lucide-react';
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,7 +26,7 @@ const ScrollToTop = () => {
     const timer = setTimeout(() => {
       setIsLoaded(true);
     }, 500);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,10 +42,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-6 right-6 z-50 bg-stone-950/30 backdrop-blur-lg p-3 rounded-xl text-stone-400 hover:text-white transition-all duration-500 transform hover:scale-110 shadow-lg ${
-            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          aria-label="Scroll to top"
+          className={`fixed bottom-6 right-6 z-50 backdrop-blur-lg shadow-lg ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} p-2 rounded-lg bg-white/20 hover:bg-white/30 text-white`}
         >
           <ChevronUpIcon className="w-6 h-6" />
         </button>

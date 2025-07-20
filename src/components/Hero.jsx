@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { HERO_CONTENT } from "../constants";
 import { RiHand } from "react-icons/ri";
 import RotatingText from "./RotatingText/RotatingText";
@@ -47,24 +48,40 @@ const floatingVariants = {
     }
 };
 
+const imageScrollVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 1, ease: "easeOut" }
+    }
+};
+
 const Hero = () => {
+    const heroRef = useRef(null);
+    const imageRef = useRef(null);
+    const textRef = useRef(null);
+    
+    const isImageInView = useInView(imageRef, { amount: 0.3 });
+    const isTextInView = useInView(textRef, { amount: 0.3 });
+
     const openResume = () => {
         window.open(HERO_CONTENT.resumeLink, '_blank', 'noopener,noreferrer');
     };
 
     return (
-        <section id="hero" className="relative min-h-screen overflow-hidden">
+        <section id="hero" className="relative min-h-screen overflow-hidden" ref={heroRef}>
             <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4 mt-16 lg:mt-0 px-4 sm:px-6 md:px-8">
-                <div className="w-full md:w-1/2 relative py-6 md:py-0">
+                <div className="w-full md:w-1/2 relative py-6 md:py-0" ref={imageRef}>
                     <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        initial="hidden"
+                        animate={isImageInView ? "visible" : "hidden"}
+                        variants={imageScrollVariants}
                         className="flex justify-center items-center w-full h-full"
                     >
                         <motion.div
                             className="w-64 h-64 sm:w-80 sm:h-80 overflow-hidden flex justify-center items-center"
-                            animate="float"
+                            animate={isImageInView ? "float" : ""}
                             variants={floatingVariants}
                         >
                             <img
@@ -81,8 +98,9 @@ const Hero = () => {
 
                 <motion.div
                     className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 mt-[-20px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
+                    ref={textRef}
                     initial="hidden"
-                    animate="visible"
+                    animate={isTextInView ? "visible" : "hidden"}
                     variants={containerVariants}
                 >
                     <motion.div
@@ -91,7 +109,7 @@ const Hero = () => {
                     >
                         <motion.div
                             className="inline-flex items-center"
-                            animate="wave"
+                            animate={isTextInView ? "wave" : ""}
                             variants={waveVariants}
                             style={{ originX: 0.7, originY: 0.7 }}
                         >
