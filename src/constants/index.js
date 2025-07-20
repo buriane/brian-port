@@ -1,5 +1,10 @@
 import cocard from "../assets/cocard.webp";
 
+import django from "../assets/django.webp";
+import python from "../assets/python.webp";
+import nuxt from "../assets/nuxt.webp";
+import vue from "../assets/vue.webp";
+import next from "../assets/next.webp";
 import bootstrap from "../assets/bootstrap.webp";
 import figma from "../assets/figma.webp";
 import firebase from "../assets/firebase.webp";
@@ -8,7 +13,6 @@ import git from "../assets/git.webp";
 import github from "../assets/github.webp";
 import js from "../assets/js.webp";
 import laravel from "../assets/laravel.webp";
-import livewire from "../assets/livewire.webp";
 import php from "../assets/php.webp";
 import postman from "../assets/postman.webp";
 import react from "../assets/react.webp";
@@ -80,10 +84,14 @@ export const ABOUT_CONTENT = {
     "I have experience learning with a variety of tools and technologies, including: ",
   ],
   skills: [
-    { name: "React", image: react, label: "Frontend Framework" },
-    { name: "JavaScript", image: js, label: "Programming Language" },
+    { name: "Django", image: django, label: "Web Framework" },
+    { name: "Python", image: python, label: "Programming Language" },
+    { name: "Nuxt.js", image: nuxt, label: "Vue.js Framework" },
+    { name: "Vue.js", image: vue, label: "JavaScript Framework" },
     { name: "Tailwind CSS", image: tailwind, label: "CSS Framework" },
-    { name: "Laravel", image: laravel, label: "Web Framework" },
+    { name: "React", image: react, label: "Frontend Framework" },
+    { name: "Next.js", image: next, label: "React Framework" },
+    { name: "JavaScript", image: js, label: "Programming Language" },
     { name: "Figma", image: figma, label: "Design Tool" },
     { name: "Bootstrap", image: bootstrap, label: "CSS Framework" },
     { name: "Firebase", image: firebase, label: "Backend-as-a-Service" },
@@ -94,8 +102,8 @@ export const ABOUT_CONTENT = {
     { name: "Streamlit", image: streamlit, label: "Web App Framework" },
     { name: "Visual Studio Code", image: vscode, label: "Code Editor" },
     { name: "WordPress", image: wordpress, label: "Content Management System (CMS)" },
+    { name: "Laravel", image: laravel, label: "Web Framework" },
     { name: "PHP", image: php, label: "Programming Language" },
-    { name: "LiveWire", image: livewire, label: "Full-stack Framework" },
   ],
 };
 
