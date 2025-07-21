@@ -125,7 +125,7 @@ const Hero = () => {
                     </motion.div>
 
                     <motion.h1
-                        className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4"
+                        className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4"
                         variants={textVariants}
                     >
                         {HERO_CONTENT.name}
@@ -147,7 +147,7 @@ const Hero = () => {
                     </motion.div>
 
                     <motion.p
-                        className="text-md md:text-lg lg:text-xl mb-8 max-w-xl leading-relaxed"
+                        className="text-md md:text-lg lg:text-xl mb-8 max-w-xl leading-relaxed text-white/70 font-light"
                         variants={textVariants}
                     >
                         {HERO_CONTENT.description}

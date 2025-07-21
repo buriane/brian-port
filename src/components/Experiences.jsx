@@ -86,7 +86,7 @@ const Experiences = () => {
                             {/* dot timeline */}
                             <div className="absolute left-4 top-6 w-4 h-4 bg-white rounded-full z-10 md:left-4" />
 
-                            <div className="text-lg text-white/60 md:w-1/4 mb-2 md:mb-0 p-4 pl-12 md:pl-12">
+                            <div className="text-lg font-medium text-white/60 md:w-1/4 mb-2 md:mb-0 p-4 pl-12 md:pl-12">
                                 {experience.yearRange}
                             </div>
 
@@ -121,16 +121,16 @@ const Experiences = () => {
                                         </motion.div>
 
                                         <div className="mt-2">
-                                            <h2 className="text-xl mb-2">
+                                            <h2 className="text-xl mb-2 font-semibold text-white">
                                                 {experience.title}
                                             </h2>
-                                            <p className="mb-4 text-sm italic">
+                                            <p className="mb-4 text-sm italic text-white/70">
                                                 {experience.location}
                                             </p>
                                         </div>
                                     </div>
 
-                                    <ul className="list-disc list-inside space-y-2 mt-4 text-justify relative z-10">
+                                    <ul className="list-disc list-inside space-y-2 mt-4 text-justify relative z-10 font-light">
                                         {experience.description.map((desc, idx) => (
                                             <li key={idx}>
                                                 {desc}

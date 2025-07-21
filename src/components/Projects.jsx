@@ -114,10 +114,10 @@ const Projects = () => {
                                     </div>
 
                                     <div className="space-y-3">
-                                        <h2 className="text-2xl font-medium">
+                                        <h2 className="text-2xl font-bold">
                                             {project.name}
                                         </h2>
-                                        <p className="text-sm text-white/60 line-clamp-3 text-justify">
+                                        <p className="text-sm text-white/60 line-clamp-3 text-justify font-light">
                                             {project.description}
                                         </p>
                                     </div>
@@ -126,7 +126,7 @@ const Projects = () => {
                                         {project.tech?.map((tech, techIndex) => (
                                             <span
                                                 key={techIndex}
-                                                className="bg-white/5 px-3 py-1 rounded-lg text-md text-white"
+                                                className="bg-white/5 px-3 py-1 rounded-lg text-md text-white font-light"
                                             >
                                                 {tech}
                                             </span>

@@ -140,7 +140,7 @@ const About = () => {
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.from[0]}</h2>
-                  <p className="text-sm font-light">{ABOUT_CONTENT.from[1]}</p>
+                  <p className="text-sm font-light text-white/70">{ABOUT_CONTENT.from[1]}</p>
                 </div>
               </div>
             </motion.div>
@@ -176,7 +176,7 @@ const About = () => {
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.college[0]}</h2>
-                  <p className="text-sm font-light">{ABOUT_CONTENT.college[1]}</p>
+                  <p className="text-sm font-light text-white/70">{ABOUT_CONTENT.college[1]}</p>
                 </div>
               </div>
             </motion.div>
@@ -235,7 +235,7 @@ const About = () => {
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{skill.name}</h2>
-                    <p className="text-sm font-light">{skill.label}</p>
+                    <p className="text-sm font-light text-white/70">{skill.label}</p>
                   </div>
                 </div>
               </motion.div>
