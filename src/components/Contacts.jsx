@@ -50,15 +50,15 @@ const textVariants = {
 };
 
 const iconVariants = {
-    hidden: { opacity: 0, scale: 1.2 },
-    visible: () => ({
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
         opacity: 1,
         scale: 1.2,
         transition: {
-            duration: 0.5,
-            ease: "easeOut",
+            opacity: { duration: 0.6, ease: "easeOut" },
+            scale: { duration: 0.7, ease: "easeOut", type: "spring", stiffness: 100 },
         },
-    }),
+    },
     hover: {
         scale: 1.3,
         transition: {
