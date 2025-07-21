@@ -50,19 +50,32 @@ const textVariants = {
 };
 
 const iconVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
+    hidden: {
+        opacity: 0,
+        scale: 0.8,
+        y: 20
+    },
+    visible: (custom) => ({
         opacity: 1,
         scale: 1.2,
+        y: 0,
         transition: {
-            opacity: { duration: 0.6, ease: "easeOut" },
-            scale: { duration: 0.7, ease: "easeOut", type: "spring", stiffness: 100 },
+            delay: custom,
+            duration: 0.8,
+            ease: [0.68, -0.55, 0.265, 1.55],
+            scale: {
+                type: "spring",
+                stiffness: 200,
+                damping: 15,
+                mass: 0.8,
+            },
         },
-    },
+    }),
     hover: {
         scale: 1.3,
+        y: -5,
         transition: {
-            duration: 0.3,
+            duration: 0.2,
             ease: "easeOut",
         },
     },
@@ -134,8 +147,9 @@ const Contacts = () => {
                             className="relative rounded-lg p-2 backdrop-blur-3xl bg-stone-500/10 border border-stone-500/20 cursor-pointer"
                             initial="hidden"
                             whileInView="visible"
-                            custom={1.0 + index * 0.2}
+                            custom={index * 0.1}
                             variants={iconVariants}
+                            viewport={{ amount: 0.3 }}
                             onMouseEnter={() => setHoveredIcon(link.platform)}
                             onMouseLeave={() => setHoveredIcon(null)}
                             whileHover="hover"
@@ -146,8 +160,8 @@ const Contacts = () => {
                         >
                             <motion.div
                                 className={`transition-opacity duration-300 ${hoveredIcon && hoveredIcon !== link.platform
-                                        ? 'opacity-50'
-                                        : 'opacity-100'
+                                    ? 'opacity-50'
+                                    : 'opacity-100'
                                     }`}
                             >
                                 <Icon size={30} />
