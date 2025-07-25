@@ -150,7 +150,7 @@ const Hero = () => {
                         className="text-md md:text-lg lg:text-xl mb-8 max-w-xl leading-relaxed text-white/70 font-light"
                         variants={textVariants}
                     >
-                        {HERO_CONTENT.description}
+                        Creative Web Developer and UI/UX Designer, transforming ideas into seamless and intuitive digital experiences.
                     </motion.p>
 
                     <div className="w-full flex justify-start mb-8 lg:mt-4">

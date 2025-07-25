@@ -57,8 +57,6 @@ export const HERO_CONTENT = {
   cocard: cocard,
   greeting: "Hey! It's me",
   name: "Brian Cahya,",
-  description:
-    "Creative Web Developer and UI/UX Designer, transforming ideas into seamless and intuitive digital experiences.",
   resumeLinkText: "Access My Resume",
   resumeLink: "/resume.pdf",
 };
