@@ -105,7 +105,6 @@ const Certificates = () => {
                                                 loading="lazy"
                                                 decoding="async"
                                                 width="400"
-                                                fetchPriority="high"
                                                 onClick={() => openModal(certificate)}
                                                 className={`w-full h-full object-cover rounded-md transition-all duration-300 ${hoveredCertificate && hoveredCertificate !== certificate
                                                     ? 'opacity-50'
@@ -160,7 +159,7 @@ const Certificates = () => {
                         </button>
                         <h2 className='text-xl font-semibold mb-4 text-white'>{selectedCertificate.name}</h2>
                         <div className='rounded-lg overflow-hidden'>
-                            <img src={selectedCertificate.image} alt={selectedCertificate.name} className='w-full h-auto rounded-md' loading="lazy" decoding="async" width="400" fetchPriority="high" />
+                            <img src={selectedCertificate.image} alt={selectedCertificate.name} className='w-full h-auto rounded-md' loading="lazy" decoding="async" width="400" />
                         </div>
                     </div>
                 </div>

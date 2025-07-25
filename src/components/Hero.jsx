@@ -94,7 +94,6 @@ const Hero = () => {
                                 loading="lazy"
                                 decoding="async"
                                 width="400"
-                                fetchPriority="high"
                             />
                         </motion.div>
                     </motion.div>

@@ -137,7 +137,6 @@ const About = () => {
                   loading="lazy"
                   decoding="async"
                   width="400"
-                  fetchPriority="high"
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.from[0]}</h2>
@@ -174,7 +173,6 @@ const About = () => {
                   loading="lazy"
                   decoding="async"
                   width="400"
-                  fetchPriority="high"
                 />
                 <div>
                   <h2 className="text-lg font-semibold">{ABOUT_CONTENT.college[0]}</h2>
@@ -234,7 +232,6 @@ const About = () => {
                     loading="lazy"
                     decoding="async"
                     width="400"
-                    fetchPriority="high"
                   />
                   <div>
                     <h2 className="text-lg font-semibold">{skill.name}</h2>

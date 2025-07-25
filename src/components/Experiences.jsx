@@ -115,7 +115,6 @@ const Experiences = () => {
                                                     loading="lazy"
                                                     decoding="async"
                                                     width="400"
-                                                    fetchPriority="high"
                                                     className="w-full h-full object-cover rounded-lg"
                                                 />
                                             </div>
