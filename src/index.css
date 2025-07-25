@@ -7,22 +7,24 @@
   font-optical-sizing: auto;
   background: #000000;
   color: #ffffff;
-  scroll-behavior: smooth;
+  /* scroll-behavior is moved to a media query for performance */
 }
 
-.bg-image {
-  background-image: url("./assets/brian.webp");
+/* 1. Use a media query for smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
 }
 
-#about {
-  scroll-margin-top: 80px;
-}
-
+/* 2. Simplified and more performant hover animation */
 .slide-up-down-animation {
   display: inline-block;
   overflow: hidden;
   position: relative;
-  height: 1.2em; /* Sesuaikan tinggi dengan ukuran font */
+  height: 1.3em;
+  /* Add will-change to hint browser about upcoming transform */
+  will-change: transform, opacity;
 }
 
 .slide-up-down-animation span {
@@ -30,70 +32,27 @@
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.slide-up-down-animation span.old-text {
-  transform: translateY(0);
-}
-
 .slide-up-down-animation span.new-text {
   position: absolute;
-  top: 100%; /* Mulai dari bawah */
+  top: 0;
   left: 0;
   width: 100%;
   opacity: 0;
-  transform: translateY(0);
+  /* Start the new text from below */
+  transform: translateY(100%);
 }
 
-/* Animasi saat hover */
 .slide-up-down-animation:hover span.old-text {
-  transform: translateY(-100%); /* Teks lama naik */
+  transform: translateY(-100%);
   opacity: 0;
 }
 
 .slide-up-down-animation:hover span.new-text {
-  transform: translateY(-100%); /* Teks baru muncul dari bawah */
+  transform: translateY(0);
   opacity: 1;
 }
 
-/* Animasi saat unhover */
-.slide-up-down-animation:not(:hover) span.old-text {
-  transform: translateY(0); /* Teks lama turun kembali */
-  opacity: 1;
-}
-
-.slide-up-down-animation:not(:hover) span.new-text {
-  transform: translateY(0); /* Teks baru turun dan menghilang */
-  opacity: 0;
-}
-
-.shiny-text {
-  color: #b5b5b5a4; /* Adjust this color to change intensity/style */
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  display: inline-block;
-  animation: shine 3s linear infinite;
-}
-
-@keyframes shine {
-  0% {
-    background-position: 100%;
-  }
-  100% {
-    background-position: -100%;
-  }
-}
-
-.shiny-text.disabled {
-  animation: none;
-}
-
-/* Scrollbar Style 1 - Thin line with subtle hover effect */
+/* Scrollbar styles are generally low-impact, so they are kept as is */
 ::-webkit-scrollbar {
   width: 4px;
 }
@@ -111,7 +70,6 @@
   background: rgba(136, 136, 136, 0.5);
 }
 
-/* Firefox scrollbar support */
 html {
   scrollbar-width: thin;
   scrollbar-color: rgba(136, 136, 136, 0.3) transparent;

@@ -136,6 +136,7 @@ const About = () => {
                   className="w-12 h-12 mr-4"
                   loading="lazy"
                   decoding="async"
+                  width="400"
                   fetchPriority="high"
                 />
                 <div>
@@ -172,6 +173,7 @@ const About = () => {
                   className="w-12 h-12 mr-4"
                   loading="lazy"
                   decoding="async"
+                  width="400"
                   fetchPriority="high"
                 />
                 <div>
@@ -231,6 +233,7 @@ const About = () => {
                     className="w-12 mr-4"
                     loading="lazy"
                     decoding="async"
+                    width="400"
                     fetchPriority="high"
                   />
                   <div>

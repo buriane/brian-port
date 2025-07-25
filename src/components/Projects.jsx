@@ -102,6 +102,7 @@ const Projects = () => {
                                             alt={project.name}
                                             loading="lazy"
                                             decoding="async"
+                                            width="400"
                                             fetchPriority="high"
                                             className={`w-full h-full object-cover transition-all duration-300 ${hoveredImage !== null && hoveredImage !== index
                                                 ? 'opacity-50'

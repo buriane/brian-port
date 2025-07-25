@@ -93,6 +93,7 @@ const Hero = () => {
                                 className="w-auto h-auto max-w-full max-h-full object-cover"
                                 loading="lazy"
                                 decoding="async"
+                                width="400"
                                 fetchPriority="high"
                             />
                         </motion.div>
