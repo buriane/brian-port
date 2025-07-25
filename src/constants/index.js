@@ -57,6 +57,7 @@ export const HERO_CONTENT = {
   cocard: cocard,
   greeting: "Hey! It's me",
   name: "Brian Cahya,",
+  description: "Creative Web Developer and UI/UX Designer, transforming ideas into seamless and intuitive digital experiences.",
   resumeLinkText: "Access My Resume",
   resumeLink: "/resume.pdf",
 };
@@ -256,13 +257,13 @@ export const CONTACT_CONTENT = {
       platform: "LinkedIn",
       url: "https://www.linkedin.com/in/briancahya/",
       ariaLabel: "Connect with me on LinkedIn",
-      icon: "RiLinkedinFill", 
+      icon: "RiLinkedinFill",
     },
     {
       platform: "Email",
       url: "mailto:briancp14@gmail.com",
       ariaLabel: "Send me an email",
-      icon: "RiMailFill", 
+      icon: "RiMailFill",
     },
     {
       platform: "GitHub",
