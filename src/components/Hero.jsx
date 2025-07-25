@@ -1,10 +1,20 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { HERO_CONTENT } from "../constants";
 import { RiHand } from "react-icons/ri";
 import RotatingText from "./RotatingText/RotatingText";
 
 const textVariants = {
     hidden: { opacity: 0, x: 100 },
+    visible: {
+        opacity: 1,
+        x: 0,
+        transition: { duration: 1, ease: "easeOut" },
+    },
+};
+
+const imageVariants = {
+    hidden: { opacity: 0, x: -100 },
     visible: {
         opacity: 1,
         x: 0,
@@ -48,18 +58,24 @@ const floatingVariants = {
 };
 
 const Hero = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { 
+        once: false,
+        margin: "-200px"
+    });
+
     const openResume = () => {
         window.open(HERO_CONTENT.resumeLink, '_blank', 'noopener,noreferrer');
     };
 
     return (
-        <section id="hero" className="relative min-h-screen overflow-hidden">
+        <section id="hero" className="relative min-h-screen overflow-hidden" ref={ref}>
             <div className="relative z-10 min-h-screen flex flex-wrap flex-col md:flex-row items-center justify-center text-white text-justify mb-4 mt-16 lg:mt-0 px-4 sm:px-6 md:px-8">
                 <div className="w-full md:w-1/2 relative py-6 md:py-0">
                     <motion.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        initial="hidden"
+                        animate={isInView ? "visible" : "hidden"}
+                        variants={imageVariants}
                         className="flex justify-center items-center w-full h-full"
                     >
                         <motion.div
@@ -82,7 +98,7 @@ const Hero = () => {
                 <motion.div
                     className="w-full md:w-1/2 p-4 sm:p-6 md:p-8 mt-[-20px] md:mt-0 mb-10 md:mb-0 flex flex-col justify-center"
                     initial="hidden"
-                    animate="visible"
+                    animate={isInView ? "visible" : "hidden"}
                     variants={containerVariants}
                 >
                     <motion.div
