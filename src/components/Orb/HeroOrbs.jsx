@@ -21,29 +21,15 @@ const HeroOrbs = ({ isVisible = true }) => {
             animate={isVisible ? "visible" : "hidden"}
             variants={containerVariants}
         >
-            {/* orb 1 */}
             <Orb
                 color="#00F5D4"
-                size={350}
-                blur={80}
-                opacity={0.3}
-                duration={9}
-                className="absolute -top-[5%] -left-[10%] md:left-[5%] hidden md:block"
-                x={-20}
-                y={40}
-            />
-
-            {/* orb 2 */}
-            <Orb
-                color="#89CFF0"
                 size={280}
-                blur={65}
-                opacity={0.4}
+                blur={90}
+                opacity={0.35}
                 duration={7}
-                delay={1}
-                className="absolute top-[10%] md:top-auto md:bottom-[25%] left-[90%]"
-                x={20}
-                y={-30}
+                className="absolute top-[10%] md:top-auto md:bottom-[60%] left-[70%] md:left-[80%]"
+                x={60}
+                y={-60}
             />
         </motion.div>
     );
